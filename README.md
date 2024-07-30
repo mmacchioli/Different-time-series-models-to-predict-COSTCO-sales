@@ -21,6 +21,8 @@ Statistical Significance and Model Efficacy The chosen variables are both statis
 
 Visual Analysis The following images display the regression analysis results and the correlation matrix, visually substantiating the strong relationship between the chosen variables and the stock price:
 
+![image](https://github.com/user-attachments/assets/1897e262-a85a-43c6-92c7-72f92ad2a02d)
+
 Regression Analysis Results
 
 image
