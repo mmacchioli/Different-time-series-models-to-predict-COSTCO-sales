@@ -32,14 +32,9 @@ This result is consistent with the following graph, where we show the cumulative
 ![image](https://github.com/user-attachments/assets/f4be92ad-0539-419d-950e-2596b611d7ef)
 
 
-ARIMA Projections
-Using Fundamental stock price data, an ARIMA model will be configured to forecast the price movements for the next two years. This section will detail the selection process for the ARIMA model parameters (p, d, q) and discuss the model’s fit and forecast accuracy. The model's predictions will be compared against the estimated intrinsic values to identify potential periods where the stock might be under- or over-valued.
+## Results and conclusions
 
-To select the appropriate ARIMA model, we utilize the auto.arima function in RStudio, which determines the optimal ARIMA order by minimizing the AIC criterion
+The analysis results show that the ARIMA function and the Naive Model provide the best forecasts for predicting COSTCO sales. On the other hand, the OLS and PCA models are not capable of achieving a good fit when the target variable presents a peak or a plummet
 
-image
+![image](https://github.com/user-attachments/assets/f0357383-5c37-427c-a37e-171551fa68ec)
 
-Results and conclusions
-The analysis results show that, over the last year, Nike's stock price has been significantly lower than its fundamental values. According to value investing theory, this presents a good opportunity to buy Nike stock at the current price due to the substantial safety margin it offers. Furthermore, if the sales and EBITDA remain relatively stable, the continued decline in current prices could present an even more compelling buying opportunity.
-
-image
