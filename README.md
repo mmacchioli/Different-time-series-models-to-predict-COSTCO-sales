@@ -14,24 +14,23 @@ The financial metrics used in this analysis are sourced from Stockrow.com, a rel
 ![image](https://github.com/user-attachments/assets/fc9b45b1-e84f-411d-9be8-0c560749c51d)
 
 
-Estimation Method
-Objective and Approach To estimate the fundamental price of Nike's stock, we initially identify the most predictive financial metrics. An Ordinary Least Squares (OLS) regression model is then employed, selecting Sales and EBITDA as primary predictors. These metrics were chosen for their significant roles in representing revenues and profitability, respectively.
+## Estimation Method
 
-Statistical Significance and Model Efficacy The chosen variables are both statistically and economically significant, with the regression model explaining approximately 90% of the variance in Nike's stock price. This high degree of explanation underscores the robustness of the model in capturing key price drivers.
+We estimate different time series models to forecast COSTCO sales, using an Exponential Moving Average as the baseline. The ARIMA model is considered using the auto.arima function. The RW model is a Random Walk, which basically consists of predicting a new value by replicating the last value in the training set. The VAR model was estimated with 2 lags, incorporating Walmart sales and Personal Income data according to official sources. The OLS model includes Personal Income and Walmart sales, along with their squared values, as exogenous variables. 
 
-Visual Analysis The following images display the regression analysis results and the correlation matrix, visually substantiating the strong relationship between the chosen variables and the stock price:
+![image](https://github.com/user-attachments/assets/ebcfbd4b-9775-4190-975a-abd9ce31be87)
 
-![image](https://github.com/user-attachments/assets/1897e262-a85a-43c6-92c7-72f92ad2a02d)
+## Forecast Analysis Results
+As a first approach, it is possible to observe that the Mean Squared Error suggests that the best adjustment corresponds to the Exponential Moving Average model, followed by the ARIMA and VAR models. In all these cases, the forecast variance is smaller than the target variable variance, which supports the idea that these models are useful. The OLS and PCA (Principal Component Analysis) adjustments perform poorly, as their variance exceeds the variance of the target variable 
 
-Regression Analysis Results
+https://en.wikipedia.org/wiki/Mean_squared_error
 
-image
+![image](https://github.com/user-attachments/assets/e99d341b-2356-417a-9a11-cdfc2dfe6d8d)
 
-image
+This result is consistent with the following graph, where we show the cumulative Mean Squared Error throughout the sample. It is easy to observe how the Naive (EMA) model, followed by the ARIMA and VAR models, achieve the best performance
 
-Finally, we apply the Hodrick-Prescott filter to isolate the trend components within the Sales and EBITDA series. These components are then utilized to estimate a linear projection in our OLS model. This method facilitates an effective evaluation of these trends, enabling us to accurately predict the fundamental price of Nike stocks
+![image](https://github.com/user-attachments/assets/f4be92ad-0539-419d-950e-2596b611d7ef)
 
-image
 
 ARIMA Projections
 Using Fundamental stock price data, an ARIMA model will be configured to forecast the price movements for the next two years. This section will detail the selection process for the ARIMA model parameters (p, d, q) and discuss the model’s fit and forecast accuracy. The model's predictions will be compared against the estimated intrinsic values to identify potential periods where the stock might be under- or over-valued.
